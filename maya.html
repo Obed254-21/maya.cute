@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Maya 💖</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #fff;
+        text-align: center;
+    }
+
+    .card {
+        background: rgba(0, 0, 0, 0.35);
+        padding: 25px;
+        border-radius: 20px;
+        width: 90%;
+        max-width: 400px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    h1 {
+        margin-bottom: 10px;
+        font-size: 26px;
+    }
+
+    input[type="text"], input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 10px;
+        border: none;
+    }
+
+    button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        background: #ff4d6d;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background: #ff1e56;
+    }
+
+    img {
+        width: 100%;
+        margin-top: 15px;
+        border-radius: 15px;
+        display: none;
+    }
+
+    .message {
+        margin-top: 15px;
+        font-size: 18px;
+        display: none;
+    }
+
+    .hearts {
+        font-size: 22px;
+        margin-top: 10px;
+    }
+
+    iframe {
+        margin-top: 15px;
+        border-radius: 12px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Hey Maya 💕</h1>
+    <p>Please tell me your name</p>
+
+    <input type="text" id="nameInput" placeholder="Enter your name">
+
+    <p>Upload your photo 📸</p>
+    <input type="file" accept="image/*" onchange="showImage(event)">
+
+    <button onclick="showMessage()">Show Message 💖</button>
+
+    <img id="preview">
+    <div class="message" id="loveMessage"></div>
+
+    <div class="hearts">💖 💕 💘 💞 💓</div>
+
+    <!-- Love song -->
+    <iframe width="100%" height="150"
+        src="https://www.youtube.com/embed/450p7goxZqg?autoplay=1&mute=1"
+        allow="autoplay; encrypted-media">
+    </iframe>
+</div>
+
+<script>
+function showImage(event) {
+    const img = document.getElementById("preview");
+    img.src = URL.createObjectURL(event.target.files[0]);
+    img.style.display = "block";
+}
+
+function showMessage() {
+    const name = document.getElementById("nameInput").value || "Maya";
+    const msg = document.getElementById("loveMessage");
+
+    msg.innerHTML = `
+        💐 Dear ${name},<br><br>
+        You are the <b>prettiest lady</b> I have met so far this year 💖<br><br>
+        — <i>From Obed</i>
+    `;
+    msg.style.display = "block";
+}
+</script>
+
+</body>
+</html>
